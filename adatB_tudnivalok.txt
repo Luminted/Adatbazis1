@@ -4,4 +4,22 @@ Honlapon ha be kell jelentkezni:
 user: hallgato
 ps: eltegyak
 
+http://medusa.inf.elte.hu/oradoc11/index.htm
+
 2.gy
+
+röpiben null, unknown
+
+- Milyen azonosítójú osztályon dolgoznak a dolgozók?
+SELECT OAZON FROM DOLGOZO;
+
+- Adjuk meg a dolgozók között elõforduló foglalkozások neveit!
+SELECT DISTINCT OAZON FROM DOLGOZO;
+
+- Kik azok a dolgozók, akiknek a jutaléka ismert?
+
+select OAZON, DNEV, FIZETES, fizetes + NVL(JUTALEK, 0) "Fizetés"
+from dolgozo
+where JUTALEK is not null;
+
+- Adjuk meg a dolgozók nevét, az éves fizetését és hány hete állt munkába!
