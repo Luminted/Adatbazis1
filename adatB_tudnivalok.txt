@@ -41,5 +41,6 @@ select DNEV || ' foglalkozasa ' || FOGLALKOZAS || ' és fizetése ' || TO_CHAR(fiz
 részletek
 
 -Agregátor függvények
+select min(FIZETES), max(FIZETES), sum(FIZETES), avg(FIZETES) from dolgozo group by FOGLALKOZAS;
 from DOLGOZO;
 
