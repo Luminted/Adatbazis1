@@ -2,11 +2,11 @@ Zh elmélet + gyakorlat
 
 Honlapon ha be kell jelentkezni:
 user: hallgato
-ps: eltegyak
+pw: eltegyak
 
 http://medusa.inf.elte.hu/oradoc11/index.htm
 
-2.gy
+2.gyak
 
 röpiben null, unknown
 
@@ -23,3 +23,23 @@ from dolgozo
 where JUTALEK is not null;
 
 - Adjuk meg a dolgozók nevét, az éves fizetését és hány hete állt munkába!
+
+3.gyak
+
+Relációs algebra szintaktikája:
+
+PI_oszlopok(G_feltétel(Táblanév))
+
+-Konkatenáció
+
+select DNEV || ' foglalkozasa ' || FOGLALKOZAS részletek
+from DOLGOZO;
+
+-Karakter és integer sorozat konkatenálása
+
+select DNEV || ' foglalkozasa ' || FOGLALKOZAS || ' és fizetése ' || TO_CHAR(fizetes)
+részletek
+
+-Agregátor függvények
+from DOLGOZO;
+
