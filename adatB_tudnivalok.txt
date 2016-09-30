@@ -42,5 +42,12 @@ részletek
 
 -Agregátor függvények
 select min(FIZETES), max(FIZETES), sum(FIZETES), avg(FIZETES) from dolgozo group by FOGLALKOZAS;
+
+select FOGLALKOZAS, count(*), count(oazon), min(FIZETES), max(FIZETES), sum(FIZETES), round(avg(FIZETES),2) from dolgozo group by FOGLALKOZAS;
+
+Ajánlott házi:
+3.gyak anyagának befejezése
+
+
 from DOLGOZO;
 
