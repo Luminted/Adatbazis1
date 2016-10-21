@@ -51,3 +51,18 @@ Ajánlott házi:
 
 from DOLGOZO;
 
+6. gyakorlat
+
+	3. gyakorlat feladatai kiterjesztett algebrával való ábrázolása
+
+1. feladat
+
+	PI_max(fizetes) O(Dolgozo)
+select MIN(fizetes)min, MAX(fizetes) max from DOLGOZO;
+select SUM(fizetes) fizSum FROM DOLGOZO;
+select avg(fizetes) fizavg FROM sila.DOLGOZO WHERE DNEV LIKE '%L%L%';
+select count(distinct foglalkozas) foglalkozasszam from SILA.DOLGOZO;
+select round(avg(fizetes),1) atl_fiz, OAZON from DOLGOZO WHERE OAZON is not null GROUP BY OAZON;
+select telephely , oazon, round(avg(fizetes),1) from DOLGOZO natural join OSZTALY group by oazon, telephely  having oazon > 2000;
+
+select nvl(to_char(o.oazon), 'fiktív') osztály, nvl(sum(d.fizetes),0) from osztaly o full outer join dolgozo d on o.oazon = d.oazon group by o.oazon order by o.oazon;
