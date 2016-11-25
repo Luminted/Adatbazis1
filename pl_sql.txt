@@ -1,0 +1,61 @@
+Kötelezõ HF:
+ > HF: PL/SQL feladatok: --- ehhez, mint a DML-hez volt: createDolg (no constraint)
+     -- A PL/SQL blokk elõtt minden alkalommal állítsuk be: SET SERVEROUTPUT ON
+     1.) Az elsõ feladat: Írjuk ki PL/SQL blokkból: 'Szia Világ!', majd egészítsük ki, 
+          kérjen be egy nevet, számot, dátumot és ezeket is írassuk ki a programból! 
+     2.) Írjuk ki KING fizetését (olvasás táblából változóba), abban az esetben, 
+          ha ismert, hogy pontosan egy KING nevû dolgozó szerepel a táblában, 
+          lásd példa-2-25 select-into (itt a 2-25 példában blokk: begin ... end; / 
+            át kell tenni az end;-et a végére!) SELECT INTO-t akkor használjuk, 
+            ha a lekérdezés pontosan egy sort ad, ha a lekérdezés több sorral 
+            tér vissza, akkor  kurzort kell használni, lásd köv.gyakorlat anyagát). 
+     3.) Adjuk meg egy fõnök azonosítóját, és töröljük a közvetlen beosztottjait, és 
+          írassuk ki hány beosztottja volt, lásd  példa-6-4 implicit kurzor attribútumok.  
+
+
+Példatár: http://people.inf.elte.hu/sila/temp
+
+
+-------------------------------------
+
+% -> referencia változóra
+
+PL:   	datum          date :=sysdate;
+  	mai_datum       datum%TYPE;
+  	emp_rec1       employees%ROWTYPE;
+
+
+DEKLARE blokk -> deklarációk
+
+BEGIN/END blokk -> utasítások
+
+/ -> kód lezárása
+
+SET SERVEROUTPUT ON; -> output bekapcsolása kiíratáshoz például
+
+DBMS_OUTPUT.PUT_LINE -> képernyõre írás
+
+Itt a SELECT skalárral kell hogy visszatérjen.
+
+INTO bonus -> a SELECT értéke a bonus változóba kerül
+
+&var értékadás után -> adatot kér be a billentyûzetrõl
+
+1. Házi
+SET SERVEROUTPUT ON;
+DECLARE
+  bonus   NUMBER(8,2);
+BEGIN
+  SELECT salary * 0.10 INTO bonus
+  FROM employees
+  WHERE employee_id = 100;
+  DBMS_OUTPUT.PUT_LINE('Szia ' || '&NEV' || ' Mi a kedvenc szamod? ' || &SZAM || 'Hanyadika van? ' || TO_DATE('&datum', 'YYYY.MM.DD') );
+  
+END;
+/
+
+
+Kurzor:
+
+
+SQL%ROWCOUNT -> kurzorattríbútum
