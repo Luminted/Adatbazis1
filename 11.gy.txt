@@ -1,0 +1,35 @@
+Függvények
+----------
+
+Több RETURN is lehet.
+
+Kurzor
+------
+
+Mutató rekordszerkezet.
+Teljes lekérdezéseket tud tárolni. Ezen iterálunk LOOP-okkal.
+Függvényszerûen lehet deklarálni.
+
+SQL%FOUND 
+SQL%NOTFOUND
+SQL%ROWCOUNT 
+
+Házi
+----
+
+5.) Írjuk ki a dolgozók nevét és fizetését! 
+          -- több sort visszaadó lekérdezés, kurzor használata, lásd  példa-6-7 
+     6.) Írjuk ki a 3. 5. és 8. legnagyobb fizetésû dolgozó nevét, fizetését! 
+          -- kurzor attribútumok, lásd példa-6-14  
+     7.) Írjuk ki azon dolgozók nevét és fizetését, akik fizetése nagyobb mint 
+          egy olyan szám, amelyet a felhasználó fog majd futás közben megadni! 
+          -- felhasználói/helyettesítõ változók: &numerikus_valt, '&karakteres_valt'
+     8.) Írjuk ki azon dolgozók nevét, fizetését és osztálykódját, akik a felhasználó 
+          által megadott osztályon dolgoznak! A felhasználó által megadott betû 
+          legyen A, R, S (Accounting ...) a 10, 20, 30-as osztály esetén. 
+          -- paraméteres kurzor, lásd példa-6-17 
+     9.) Növeljük meg a hivatalnokok (CLERK) fizetését a saját fizetésük 20%-ával! 
+          -- for update kurzor módosításhoz, lásd ugyanez a feladat: példa-6-43 
+   10.) Módosítsuk a dolgozók nevét írjuk át, hogy csak a kezdõbetû legyen nagy, 
+          a többi betû kicsi, továbbá a dolgozók fizetését is növeljük meg 2 %-kal!
+          -- for update kurzor módosításhoz, lásd példa-6-43 
